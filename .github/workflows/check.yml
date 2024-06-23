@@ -1,0 +1,24 @@
+name: Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Tests
+        run: pytest tests
+      - name: Mypy
+        run: mypy /src
+      - name: Black
+        run: black --diff --check /src
+      - name: Isort
+        run: isort --check-only /src
+      - name: Flake8
+        run: flake8 /src

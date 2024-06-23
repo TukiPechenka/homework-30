@@ -1,7 +1,7 @@
 from typing import List
 from fastapi import FastAPI, Path
 from sqlalchemy.future import select
-from sqlalchemy import insert, update, CursorResult, ChunkedIteratorResult
+from sqlalchemy import update, ChunkedIteratorResult
 from logging import getLogger
 from db import engine, session
 import schemas
