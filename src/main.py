@@ -38,7 +38,7 @@ async def get_recipes():
 
 
 get_recipe_arg_recipe_id = Path(
-    title="Id of recipe you want to get",
+    title="Recipe id you want to get",
     gt=0,
 )
 
