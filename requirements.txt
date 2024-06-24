@@ -6,4 +6,5 @@ flake8-pie==0.16.0
 black==24.4.2
 isort==5.13.2
 mypy==1.10.0
-pytest==8.2.2
+pytest==8.2.
+aiosqlite==0.20.0

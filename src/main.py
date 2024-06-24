@@ -3,9 +3,8 @@ from fastapi import FastAPI, Path
 from sqlalchemy.future import select
 from sqlalchemy import update, ChunkedIteratorResult
 from logging import getLogger
-from db import engine, session
-import schemas
-import models
+from src.db import engine, session
+from src import schemas, models
 
 
 app = FastAPI()

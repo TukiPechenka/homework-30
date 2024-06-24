@@ -4,7 +4,7 @@ from sqlalchemy import String, Integer, ForeignKey, Table, Column
 from sqlalchemy.orm import relationship, mapped_column, Mapped
 
 
-from db import Base
+from src.db import Base
 
 
 class Recipe(Base):
