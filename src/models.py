@@ -1,8 +1,4 @@
-from typing import List
-
-from sqlalchemy import String, Integer, ForeignKey, Table, Column
-from sqlalchemy.orm import relationship, mapped_column, Mapped
-
+from sqlalchemy import Column, Integer, String
 
 from src.db import Base
 
