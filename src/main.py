@@ -37,12 +37,15 @@ async def get_recipes():
     return list(recipes.all())
 
 
+get_recipe_arg_recipe_id = Path(
+    title="Id of recipe you want to get",
+    gt=0,
+)
+
+
 @app.get("/recipes/{recipe_id}/", response_model=schemas.RecipeOrmModel)
 async def get_recipe(
-    recipe_id: int = Path(
-        title="Id of recipe you want to get",
-        gt=0,
-    ),
+    recipe_id: int = get_recipe_arg_recipe_id,
 ):
     recipe_data: Optional[Result | CursorResult] = await session.execute(
         select(models.Recipe).where(models.Recipe.id == recipe_id)
@@ -63,7 +66,8 @@ async def get_recipe(
 @app.post("/recipes/", response_model=schemas.RecipeOrmModel)
 async def post_recipe(recipe: schemas.RecipeDetailsModel):
     new_recipe = models.Recipe(**recipe.dict())
-    uvicorn.info("ak2c03o48w9812s734r89f01237qwks094e9812qio1e5uy891ws743k4r89msq74")
+    mes = "ak2c03o48w9812s734r89f01237qwks094e9812qio1e5uy891ws743k4r89msq74"
+    uvicorn.info(mes)
     async with session.begin():
         session.add(new_recipe)
     return new_recipe

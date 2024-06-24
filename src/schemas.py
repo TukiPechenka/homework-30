@@ -18,8 +18,11 @@ class RecipeInListModel(RecipeModel):
     )
 
 
+title_recipe_details = "products you need to make dish in recipe"
+
+
 class RecipeDetailsModel(RecipeModel):
-    ingredients: str = Field(..., title="products you need to make dish in recipe")
+    ingredients: str = Field(..., title=title_recipe_details)
     description: str
 
 
